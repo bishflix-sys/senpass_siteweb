@@ -1,52 +1,52 @@
-Merci pour les précisions sur la stack du site web **Senpass**. Voici une version optimisée du `README.md`, reflétant exactement les technologies utilisées :
 
----
-
-````markdown
 # 🇸🇳 Senpass – Portail d'identité numérique nationale du Sénégal
 
-**Senpass** est une plateforme numérique souveraine qui permet à chaque citoyen sénégalais d’accéder de manière simple, rapide et sécurisée à une multitude de services administratifs et privés à travers une seule identité numérique.
+**Senpass** est une plateforme d’identité numérique souveraine développée pour permettre à chaque citoyen sénégalais d’accéder de manière sécurisée, rapide et centralisée aux services publics et privés. Le projet est basé sur une architecture moderne combinant Laravel, Blade, TypeScript, SCSS et d'autres technologies robustes.
 
-> 🛡️ Développé par **Bishflix Systems** – Pour une Afrique connectée et souveraine.
-
----
-
-## 📊 Stack technologique principale
-
-| Langage / Tech | Usage |
-|----------------|-------|
-| **SCSS (48.7%)**     | Stylisation avancée et responsive |
-| **TypeScript (26.2%)** | Typage strict et développement frontend |
-| **Blade (10.0%)**     | Moteur de templates Laravel |
-| **PHP (7.8%)**        | Backend – APIs et logique métier |
-| **JavaScript (6.7%)** | Interactivité côté client |
-| **CSS (0.6%)**        | Feuilles de style de base / fallback |
+> 🛡️ Projet porté par **Bishflix Systems** – Pour une Afrique connectée et souveraine.
 
 ---
 
-## ✨ Fonctionnalités clés
+## 📊 Technologies principales
 
-- 🔐 Authentification multi-facteur (Mot de passe + OTP ou QR)
-- 🆔 Création et gestion du **profil numérique unique**
-- 🖋️ Signature électronique officielle
-- 📑 Accès aux services : état civil, santé, foncier, éducation, banque...
-- 📱 Expérience utilisateur responsive (mobile & desktop)
-- 🌍 Support multilingue & régional (UEMOA-ready)
+| Technologie       | Rôle dans le projet                           |
+|-------------------|-----------------------------------------------|
+| **Laravel**       | Framework backend PHP (routes, APIs, logique) |
+| **Blade**         | Moteur de templates Laravel                   |
+| **PHP**           | Langage backend principal                     |
+| **SCSS (48.7%)**  | Stylisation modulaire, responsive et maintenable |
+| **TypeScript (26.2%)** | Frontend typé et structuré               |
+| **JavaScript**    | Dynamique UI (complément TypeScript)          |
+| **CSS**           | Fallback styles ou simples surcharges         |
 
 ---
 
-## 🗂️ Arborescence simplifiée
+## ✨ Fonctionnalités principales
+
+- 🔐 Authentification forte (Mot de passe + OTP ou QR Code)
+- 🆔 Gestion du **profil numérique citoyen**
+- 📑 Intégration avec services administratifs : e-santé, e-foncier, e-éducation, e-finance
+- 🖋️ Signature électronique conforme
+- 🌍 Compatibilité régionale UEMOA (gestion multi-indicatifs)
+- 📱 Interface responsive pour Web & Mobile
+
+---
+
+## 🗂️ Structure du projet Laravel
 
 ```plaintext
 senpass_siteweb/
+├── app/                 # Logique Laravel (Models, Controllers, Policies)
 ├── resources/
-│   ├── views/         # Fichiers Blade (templates)
-│   ├── scss/          # Feuilles de style SCSS
-│   └── js/            # Scripts TypeScript et JavaScript
-├── public/            # Fichiers accessibles au public (assets, images)
-├── routes/            # Routes Laravel (web.php, api.php)
-├── app/               # Logique backend PHP (contrôleurs, modèles)
-├── .env               # Variables d’environnement
+│   ├── views/           # Templates Blade
+│   ├── scss/            # Styles SCSS (structurés par pages)
+│   └── js/              # Scripts TypeScript / JavaScript
+├── public/              # Assets publics (images, JS/CSS compilés)
+├── routes/
+│   ├── web.php          # Routes web
+│   └── api.php          # API REST sécurisée
+├── database/            # Migrations, Seeders
+├── .env.example         # Configuration d’environnement
 └── README.md
 ````
 
@@ -63,75 +63,71 @@ senpass_siteweb/
 * PostgreSQL ou MySQL
 * Git
 
-### 📦 Installation
+### 📦 Installation étape par étape
 
 ```bash
 # Cloner le dépôt
 git clone https://github.com/bishflix-sys/senpass_siteweb.git
 cd senpass_siteweb
 
-# Installer les dépendances backend
+# Installer les dépendances PHP
 composer install
 
 # Installer les dépendances frontend
 npm install && npm run dev
 
-# Configurer .env
+# Configuration de l’environnement
 cp .env.example .env
 php artisan key:generate
 
-# Migrer la base de données
+# Créer la base de données (à adapter dans .env)
 php artisan migrate
 ```
 
 ---
 
-## 🔒 Sécurité & confidentialité
+## 🔐 Sécurité & conformité
 
-* Chiffrement des données sensibles (AES-256 / RSA)
-* Authentification via token sécurisé (JWT / Laravel Sanctum)
-* Système de rôles & permissions
-* Conformité à la Loi n° 2008-12 du Sénégal (Protection des données)
-* Audit & traçabilité intégrés
-
----
-
-## 🌍 Vision UEMOA
-
-Senpass est conçu comme un **modèle interopérable** et extensible pour les 8 pays de l’UEMOA, avec un système modulaire qui gère les identifiants nationaux, les indicatifs régionaux et les services personnalisés.
+* 🔒 Chiffrement des données (AES-256, RSA)
+* ✅ Authentification basée sur Laravel Sanctum ou Passport
+* 👥 Gestion des rôles et permissions
+* 📝 Audit des accès & traçabilité
+* 📜 Respect de la **loi n°2008-12** sur la protection des données (CDP Sénégal)
 
 ---
 
-## 🧑‍💻 Contribuer
+## 🌍 Extension UEMOA
 
-Envie d’aider ? Voici comment démarrer :
+Senpass est conçu pour une **interopérabilité régionale** : chaque utilisateur est associé à un identifiant unique et un indicatif téléphonique national, facilitant une gestion uniforme des identités dans les 8 pays membres de l’UEMOA.
 
-1. **Fork** le dépôt
-2. Créez une branche : `git checkout -b feature/ma-fonctionnalite`
-3. **Codez** votre fonctionnalité
-4. Commitez : `git commit -m "Ajout fonctionnalité"`
-5. Pushez : `git push origin feature/ma-fonctionnalite`
-6. Ouvrez une **Pull Request**
+---
+
+## 🤝 Contribution
+
+Vous souhaitez contribuer ? Voici comment faire :
+
+1. Fork le dépôt
+2. Créez une branche `feature/ma-fonctionnalite`
+3. Commitez vos modifications
+4. Pushez la branche
+5. Créez une Pull Request pour revue
 
 ---
 
 ## 📄 Licence
 
-Distribué sous la licence **MIT**. Voir `LICENSE` pour plus d’informations.
+Projet sous licence **MIT**. Voir `LICENSE` pour plus d’informations.
 
 ---
 
-## 📬 Contact & Informations
+## 📬 Contact
 
-* 🌐 Site officiel : [https://senpass.sn](https://senpass.sn) *(en construction)*
-* 🏢 Développé par : [Bishflix Systems](https://bishflix.com)
-* ✉️ Email : [contact@senpass.sn](mailto:contact@senpass.sn)
-* 📍 Dakar, Sénégal
+* 🌐 Site web : [https://senpass.sn](https://senpass.sn) *(en cours)*
+* 📧 Email : [contact@senpass.sn](mailto:contact@senpass.sn)
+* 🏢 Organisation : Bishflix Systems, Dakar – Sénégal
 
 ---
 
-> 🇸🇳 *"Une identité numérique pour tous. Un accès sécurisé. Un Sénégal plus connecté."*
+> 🇸🇳 *"Une identité numérique fiable pour chaque citoyen. Un Sénégal plus connecté, plus souverain."*
 
-```
-
-```
+``
